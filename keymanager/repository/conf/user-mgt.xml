@@ -25,9 +25,33 @@
             </AdminUser>
             <EveryOneRoleName>everyone</EveryOneRoleName> <!-- By default users in this role sees the registry root -->
             <Property name="isCascadeDeleteEnabled">true</Property>
- <Property name="initializeNewClaimManager">true</Property>
-            <Property name="dataSource">jdbc/WSO2CarbonDB</Property>
+            <Property name="initializeNewClaimManager">true</Property>
+            <Property name="dataSource">jdbc/WSO2UM_DB</Property>
         </Configuration>
+        <UserStoreManager class="org.wso2.carbon.user.core.jdbc.JDBCUserStoreManager">
+            <Property name="TenantManager">org.wso2.carbon.user.core.tenant.JDBCTenantManager</Property>
+            <Property name="ReadOnly">false</Property>
+            <Property name="MaxUserNameListLength">100</Property>
+            <Property name="IsEmailUserName">false</Property>
+            <Property name="DomainCalculation">default</Property>
+            <Property name="PasswordDigest">SHA-256</Property>
+            <Property name="PasswordHashMethod">SHA</Property>
+            <Property name="StoreSaltedPassword">true</Property>
+            <Property name="ReadGroups">true</Property>
+            <Property name="WriteGroups">true</Property>
+            <Property name="UserNameUniqueAcrossTenants">false</Property>
+            <Property name="PasswordJavaRegEx">^[\S]{5,30}$</Property>
+            <Property name="PasswordJavaScriptRegEx">^[\S]{5,30}$</Property>
+            <Property name="UsernameJavaRegEx">^[^~!#$;%^*+={}\\|\\\\&lt;&gt;,\'\"]{3,30}$</Property>
+            <Property name="UsernameJavaScriptRegEx">^[\S]{3,30}$</Property>
+            <Property name="RolenameJavaRegEx">^[^~!#$;%^*+={}\\|\\\\&lt;&gt;,\'\"]{3,30}$</Property>
+            <Property name="RolenameJavaScriptRegEx">^[\S]{3,30}$</Property>
+            <Property name="UserRolesCacheEnabled">true</Property>
+            <Property name="MaxRoleNameListLength">100</Property>
+            <Property name="MaxUserNameListLength">100</Property>
+            <Property name="SharedGroupEnabled">false</Property>
+            <Property name="SCIMEnabled">false</Property>
+        </UserStoreManager>
 
 	    <!-- Following is the configuration for internal JDBC user store. This user store manager is based on JDBC.
 	         In case if application needs to manage passwords externally set property
