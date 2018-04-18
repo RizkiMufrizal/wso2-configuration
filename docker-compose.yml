@@ -1,0 +1,67 @@
+version: '3'
+services:
+  keymanager:
+    image: rizkimufrizal/wso2-jdk:latest
+    command: tail -f /dev/null
+    volumes:
+      - .:/home
+    ports:
+    - "9443:9443"
+    networks:
+      default:
+
+  analytics:
+    image: rizkimufrizal/wso2-jdk:latest
+    command: tail -f /dev/null
+    volumes:
+      - .:/home
+    ports:
+    - "9447:9444"
+    networks:
+      default:
+
+  gateway:
+    image: rizkimufrizal/wso2-jdk:latest
+    command: tail -f /dev/null
+    volumes:
+      - .:/home
+    ports:
+    - "9444:9444"
+    networks:
+      default:
+
+  publisherstore:
+    image: rizkimufrizal/wso2-jdk:latest
+    command: tail -f /dev/null
+    volumes:
+      - .:/home
+    ports:
+    - "9445:9445"
+    networks:
+      default:
+
+  trafficmanager:
+    image: rizkimufrizal/wso2-jdk:latest
+    command: tail -f /dev/null
+    volumes:
+      - .:/home
+    ports:
+    - "9446:9446"
+    networks:
+      default:
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: root
+    networks:
+      default:
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+networks:
+  default:
