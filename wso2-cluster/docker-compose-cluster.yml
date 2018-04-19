@@ -1,0 +1,84 @@
+version: '3'
+services:
+  keymanager:
+    image: rizkimufrizal/wso2-jdk:latest
+    command: tail -f /dev/null 
+    volumes:
+      - .:/home
+    ports:
+    - "9443:9443"
+    networks:
+      default:
+
+  apimanagement:
+    image: rizkimufrizal/wso2-jdk:latest
+    command: tail -f /dev/null
+    volumes:
+      - .:/home
+    ports:
+    - "9444:9444"
+    - "9445:9445"
+    networks:
+      default:
+
+  gateway1:
+    image: gateway
+    command: tail -f /dev/null
+    volumes:
+      - ./gateway-cluster:/wso2am/repository/deployment/server
+    ports:
+    - "9446:9446"
+    - "8246:8246"
+    - "8283:8283"
+    networks:
+      default:
+
+  gateway2:
+    image: gateway
+    command: tail -f /dev/null
+    volumes:
+      - ./gateway-cluster:/wso2am/repository/deployment/server
+    ports:
+    - "9447:9446"
+    - "8247:8246"
+    - "8284:8283"
+    networks:
+      default:
+
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./am.http.conf:/etc/nginx/conf.d/am.http.conf
+      - ./ssl/server.crt:/etc/nginx/ssl/server.crt
+      - ./ssl/server.key:/etc/nginx/ssl/server.key
+    ports:
+    - "8081:80"
+    - "4443:443"
+    networks:
+      default:
+
+  # nginx:
+  #   image: haproxy:alpine
+  #   volumes:
+  #     - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+  #   ports:
+  #   - "8081:80"
+  #   - "4443:443"
+  #   networks:
+  #     default:
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: root
+    networks:
+      default:
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+networks:
+  default:
