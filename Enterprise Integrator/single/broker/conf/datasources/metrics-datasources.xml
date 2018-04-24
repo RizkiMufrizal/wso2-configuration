@@ -15,7 +15,7 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:postgresql://192.168.88.110:5432/EI_WSO2METRICS_BROKER_DB</url>
+                    <url>jdbc:postgresql://192.168.0.111:5432/EI_WSO2METRICS_BROKER_DB</url>
                     <username>postgres</username>
                     <password>P@ssw0rd</password>
                     <driverClassName>org.postgresql.Driver</driverClassName>
