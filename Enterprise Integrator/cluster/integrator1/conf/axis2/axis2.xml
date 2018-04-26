@@ -246,7 +246,7 @@
         <parameter name="port" locked="false">8280</parameter>
         <parameter name="non-blocking" locked="false">true</parameter>
         <!--parameter name="bind-address" locked="false">hostname or IP address</parameter-->
-        <parameter name="WSDLEPRPrefix" locked="false">http://192.168.88.101:8280</parameter>
+        <parameter name="WSDLEPRPrefix" locked="false">http://192.168.20.23:8280</parameter>
         <parameter name="httpGetProcessor" locked="false">org.wso2.carbon.mediation.transport.handlers.PassThroughNHttpGetProcessor</parameter>
         <!--<parameter name="priorityConfigFile" locked="false">location of priority configuration file</parameter>-->
     </transportReceiver>
@@ -256,7 +256,7 @@
         <parameter name="non-blocking" locked="false">true</parameter>
         <parameter name="HttpsProtocols">TLSv1,TLSv1.1,TLSv1.2</parameter>
         <!--parameter name="bind-address" locked="false">hostname or IP address</parameter-->
-        <parameter name="WSDLEPRPrefix" locked="false">https://192.168.88.101:8243</parameter>
+        <parameter name="WSDLEPRPrefix" locked="false">https://192.168.20.23:8243</parameter>
         <parameter name="httpGetProcessor" locked="false">org.wso2.carbon.mediation.transport.handlers.PassThroughNHttpGetProcessor</parameter>
         <parameter name="keystore" locked="false">
             <KeyStore>

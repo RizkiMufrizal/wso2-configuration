@@ -33,8 +33,8 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:postgresql://192.168.88.110:5432/EI_WSO2REGISTRY_LOCAL1_DB</url>
-                    <username>postgres</username>
+                    <url>jdbc:postgresql://192.168.0.111:5432/EI_WSO2REGISTRY_LOCAL1_DB</url>
+                    <username>okky</username>
                     <password>P@ssw0rd</password>
                     <driverClassName>org.postgresql.Driver</driverClassName>
                     <maxActive>80</maxActive>
@@ -54,8 +54,8 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:postgresql://192.168.88.110:5432/EI_WSO2REGISTRY_DB</url>
-                    <username>postgres</username>
+                    <url>jdbc:postgresql://192.168.0.111:5432/EI_WSO2REGISTRY_DB</url>
+                    <username>okky</username>
                     <password>P@ssw0rd</password>
                     <driverClassName>org.postgresql.Driver</driverClassName>
                     <maxActive>80</maxActive>
@@ -75,8 +75,8 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:postgresql://192.168.88.110:5432/EI_WSO2UM_DB</url>
-                    <username>postgres</username>
+                    <url>jdbc:postgresql://192.168.0.111:5432/EI_WSO2UM_DB</url>
+                    <username>okky</username>
                     <password>P@ssw0rd</password>
                     <driverClassName>org.postgresql.Driver</driverClassName>
                     <maxActive>80</maxActive>
