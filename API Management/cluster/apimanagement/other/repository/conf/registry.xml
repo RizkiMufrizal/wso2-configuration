@@ -35,7 +35,7 @@
     </dbConfig>
     <remoteInstance url="https://localhost:9443/registry">
         <id>gov</id>
-        <cacheId>user@jdbc:postgresql://postgres:5432/registry.xml</cacheId>
+        <cacheId>user@jdbc:postgresql://192.168.0.115:5432/registry.xml</cacheId>
         <dbConfig>govregistry</dbConfig>
         <readOnly>false</readOnly>
         <enableCache>true</enableCache>
