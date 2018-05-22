@@ -136,8 +136,8 @@
 
              Ex - Multiple Receiver Groups with two receivers each
              {tcp://localhost:7612/,tcp://localhost:7613},{tcp://localhost:7712/,tcp://localhost:7713/} -->
-        <DASServerURL>{tcp://apimanagement:7612}</DASServerURL>
-        <DASAuthServerURL>{ssl://apimanagement:7712}</DASAuthServerURL>
+        <DASServerURL>{tcp://192.168.0.111:7612}</DASServerURL>
+        <DASAuthServerURL>{ssl://192.168.0.111:7712}</DASAuthServerURL>
         <!-- Administrator username to login to the remote DAS server. -->
         <DASUsername>${admin.username}</DASUsername>
         <!-- Administrator password to login to the remote DAS server. -->
@@ -147,7 +147,7 @@
         <StatsProviderImpl>org.wso2.carbon.apimgt.usage.client.impl.APIUsageStatisticsRdbmsClientImpl</StatsProviderImpl>
 
         <!-- DAS REST API configuration -->
-        <DASRestApiURL>https://apimanagement:9444</DASRestApiURL>
+        <DASRestApiURL>https://192.168.0.111:9444</DASRestApiURL>
         <DASRestApiUsername>${admin.username}</DASRestApiUsername>
         <DASRestApiPassword>${admin.password}</DASRestApiPassword>
 
@@ -202,7 +202,7 @@
     -->
     <APIKeyValidator>
         <!-- Server URL of the API key manager -->
-        <ServerURL>https://keymanager:9443/services/</ServerURL>
+        <ServerURL>https://192.168.0.115:9443/services/</ServerURL>
 
         <!-- Admin username for API key manager. -->
         <Username>${admin.username}</Username>
@@ -574,8 +574,8 @@
         <DataPublisher>
             <Enabled>true</Enabled>
             <Type>Binary</Type>
-            <ReceiverUrlGroup>tcp://apimanagement:9612</ReceiverUrlGroup>
-            <AuthUrlGroup>ssl://apimanagement:9712</AuthUrlGroup>
+            <ReceiverUrlGroup>tcp://192.168.0.111:9612</ReceiverUrlGroup>
+            <AuthUrlGroup>ssl://192.168.0.111:9712</AuthUrlGroup>
             <Username>${admin.username}</Username>
             <Password>${admin.password}</Password>
             <DataPublisherPool>
@@ -589,7 +589,7 @@
             </DataPublisherThreadPool>
         </DataPublisher>
         <PolicyDeployer>
-            <ServiceURL>https://apimanagement:9444/services/</ServiceURL>
+            <ServiceURL>https://192.168.0.111:9444/services/</ServiceURL>
             <Username>${admin.username}</Username>
             <Password>${admin.password}</Password>
         </PolicyDeployer>
@@ -600,7 +600,7 @@
         </BlockCondition>
         <JMSConnectionDetails>
             <Enabled>true</Enabled>
-            <ServiceURL>tcp://apimanagement:5674</ServiceURL>
+            <ServiceURL>tcp://192.168.0.111:5674</ServiceURL>
             <Username>${admin.username}</Username>
             <Password>${admin.password}</Password>
             <Destination>throttleData</Destination>
@@ -609,7 +609,7 @@
                 <transport.jms.ConnectionFactoryJNDIName>TopicConnectionFactory</transport.jms.ConnectionFactoryJNDIName>
                 <transport.jms.DestinationType>topic</transport.jms.DestinationType>
                 <java.naming.factory.initial>org.wso2.andes.jndi.PropertiesFileInitialContextFactory</java.naming.factory.initial>
-                <connectionfactory.TopicConnectionFactory>amqp://admin:admin@clientid/carbon?brokerlist='tcp://apimanagement:5674'</connectionfactory.TopicConnectionFactory>
+                <connectionfactory.TopicConnectionFactory>amqp://admin:admin@clientid/carbon?brokerlist='tcp://192.168.0.111:5674'</connectionfactory.TopicConnectionFactory>
             </JMSConnectionParameters>
             <JMSTaskManager>
                 <MinThreadPoolSize>20</MinThreadPoolSize>
